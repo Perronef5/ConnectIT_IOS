@@ -8,8 +8,19 @@
 
 import UIKit
 
+
+extension UIStoryboard {
+    
+    class func viewControllerMain(identifier: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier)
+    }
+    
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
 
     var window: UIWindow?
 

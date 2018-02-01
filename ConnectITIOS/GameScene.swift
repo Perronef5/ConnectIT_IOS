@@ -17,7 +17,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         
         // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
+        self.label = self.childNode(withName: "//ConnectIT") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
@@ -41,15 +41,29 @@ class GameScene: SKScene {
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
-            n.strokeColor = SKColor.green
+            n.strokeColor = UIColorFromRGB(rgbValue: 0x7ef855)
             self.addChild(n)
         }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+            let rand = CGFloat(Int(arc4random_uniform(3)))
+            switch rand {
+            case 0:
+                 n.strokeColor =  UIColorFromRGB(rgbValue: 0x7ef855)
+                break
+            case 1:
+                 n.strokeColor =  UIColorFromRGB(rgbValue: 0xff5714)
+                break
+            case 2:
+                 n.strokeColor =  UIColorFromRGB(rgbValue: 0xe4ff1a)
+                break
+            default:
+                 n.strokeColor =  UIColorFromRGB(rgbValue: 0x7ef855)
+                break
+            }
             n.position = pos
-            n.strokeColor = SKColor.blue
             self.addChild(n)
         }
     }
@@ -57,7 +71,7 @@ class GameScene: SKScene {
     func touchUp(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
-            n.strokeColor = SKColor.red
+            n.strokeColor = UIColorFromRGB(rgbValue: 0x7ef855)
             self.addChild(n)
         }
     }
@@ -85,5 +99,25 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    /* Get Colors From RGB */
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt, alpha: CGFloat) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(alpha)
+        )
     }
 }

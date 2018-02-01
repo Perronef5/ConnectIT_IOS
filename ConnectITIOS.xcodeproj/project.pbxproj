@@ -15,6 +15,8 @@
 		9DD24F7B2023853D00C35E78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD24F792023853D00C35E78 /* Main.storyboard */; };
 		9DD24F7D2023853D00C35E78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD24F7C2023853D00C35E78 /* Assets.xcassets */; };
 		9DD24F802023853D00C35E78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD24F7E2023853D00C35E78 /* LaunchScreen.storyboard */; };
+		9DD24F882023A79100C35E78 /* LocalSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD24F872023A79100C35E78 /* LocalSetupViewController.swift */; };
+		9DD24F8B2023A8B000C35E78 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD24F8A2023A8B000C35E78 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9DD24F7C2023853D00C35E78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD24F7F2023853D00C35E78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD24F812023853D00C35E78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DD24F872023A79100C35E78 /* LocalSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSetupViewController.swift; sourceTree = "<group>"; };
+		9DD24F8A2023A8B000C35E78 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		9DD24F6E2023853D00C35E78 /* ConnectITIOS */ = {
 			isa = PBXGroup;
 			children = (
+				9DD24F892023A79900C35E78 /* LocalPlay */,
 				9DD24F6F2023853D00C35E78 /* AppDelegate.swift */,
 				9DD24F712023853D00C35E78 /* GameScene.sks */,
 				9DD24F732023853D00C35E78 /* Actions.sks */,
@@ -69,8 +74,17 @@
 				9DD24F7C2023853D00C35E78 /* Assets.xcassets */,
 				9DD24F7E2023853D00C35E78 /* LaunchScreen.storyboard */,
 				9DD24F812023853D00C35E78 /* Info.plist */,
+				9DD24F8A2023A8B000C35E78 /* BaseViewController.swift */,
 			);
 			path = ConnectITIOS;
+			sourceTree = "<group>";
+		};
+		9DD24F892023A79900C35E78 /* LocalPlay */ = {
+			isa = PBXGroup;
+			children = (
+				9DD24F872023A79100C35E78 /* LocalSetupViewController.swift */,
+			);
+			path = LocalPlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +161,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD24F8B2023A8B000C35E78 /* BaseViewController.swift in Sources */,
+				9DD24F882023A79100C35E78 /* LocalSetupViewController.swift in Sources */,
 				9DD24F762023853D00C35E78 /* GameScene.swift in Sources */,
 				9DD24F782023853D00C35E78 /* GameViewController.swift in Sources */,
 				9DD24F702023853D00C35E78 /* AppDelegate.swift in Sources */,
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GNTMNU45P5;
 				INFOPLIST_FILE = ConnectITIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ConnectIT.ConnectITIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GNTMNU45P5;
 				INFOPLIST_FILE = ConnectITIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ConnectIT.ConnectITIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,8 +11,23 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    @IBOutlet weak var onlineButton: UIButton!
+    @IBOutlet weak var localButton: UIButton!
     
-    var marcial = ""
+    
+    @IBAction func buttonAction(_ sender: Any) {
+        switch ((sender as! UIButton).tag) {
+        case 0:
+            break
+        case 1:
+            let localSetupViewController = UIStoryboard.viewControllerMain(identifier: "localSetupViewController") as! LocalSetupViewController
+            self.navigationController?.present(localSetupViewController, animated: false, completion: nil)
+            break
+        default:
+            break
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +47,8 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
+        prepare()
     }
 
     override var shouldAutorotate: Bool {
@@ -53,5 +70,10 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func prepare() {
+        onlineButton.layer.cornerRadius = 6.0
+        localButton.layer.cornerRadius = 6.0
     }
 }
