@@ -11,6 +11,8 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var marcial = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
