@@ -9,6 +9,9 @@
 import UIKit
 
 class LocalSetupViewController: BaseViewController {
+    
+    var hello = ""
+    
     @IBOutlet weak var twoPlayerButton: UIButton!
     @IBOutlet weak var threePlayerButton: UIButton!
     @IBOutlet weak var fourPlayerButton: UIButton!
